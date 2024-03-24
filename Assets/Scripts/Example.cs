@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class Example : MonoBehaviour
 {
+    [Header("Dependencies")]
     [SerializeField] private Dependency<Camera> _dependencyA;
     [SerializeField] private Dependency<Camera> _dependencyB;
     [SerializeField] private Dependency<ServiceExample> _dependencyC;
+
+    [Header("Other References")]
+    [SerializeField] private Rigidbody2D _rb;
 
     private void Start()
     {
