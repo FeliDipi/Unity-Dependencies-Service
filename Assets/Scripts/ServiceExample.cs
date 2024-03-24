@@ -5,6 +5,8 @@ public class ServiceExample : DependencyService
 {
     public void Foo()
     {
-        Debug.Log("<color=#27ae60><b>Service used</b></color>");
+        Debug.Log("<b>Service used</b>");
+
+        DependencyLocator.Instance.UnRegister(this);
     }
 }

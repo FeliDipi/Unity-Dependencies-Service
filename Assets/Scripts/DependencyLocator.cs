@@ -25,20 +25,37 @@ namespace OneFrame
 
         private Dictionary<Type, Component> _services = new Dictionary<Type, Component>();
 
-        public void Register(Type key, Component value)
+        public void Register(DependencyService service)
         {
+            Type key = service.GetType();
+
             if (_services.ContainsKey(key)) return;
 
-            _services[key] = value;
+            _services[key] = service;
+
+            Debug.Log($"<color=#27ae60><b>↓ [Register]:</b> {key.Name}</color>");
+        }
+
+        public void UnRegister(DependencyService service)
+        {
+            Type key = service.GetType();
+
+            if (!_services.ContainsKey(key)) return;
+
+            _services.Remove(key);
+
+            Debug.Log($"<color=#e74c3c><b>↑ [UnRegister]:</b> {key.Name}</color>");
         }
 
         public Component Request<T>()
         {
-            Type type = typeof(T);
+            Type key = typeof(T);
 
-            if (!_services.ContainsKey(type)) return default;
+            if (!_services.ContainsKey(key)) return default;
 
-            return _services[type];
+            Debug.Log($"<color=#3498db><b>← [Request]:</b> {key.Name}</color>");
+
+            return _services[key];
         }
     }
 
@@ -48,7 +65,7 @@ namespace OneFrame
     {
         protected void Awake()
         {
-            DependencyLocator.Instance.Register(this.GetType(), this);
+            DependencyLocator.Instance.Register(this);
         }
     }
 }
