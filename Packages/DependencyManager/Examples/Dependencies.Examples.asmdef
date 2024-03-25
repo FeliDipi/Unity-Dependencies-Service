@@ -1,0 +1,16 @@
+{
+    "name": "Dependencies.Examples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ff02fe2c9072fc541980991b3c7ac5fd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

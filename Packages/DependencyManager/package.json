@@ -1,0 +1,13 @@
+{
+  "name": "com.oneframe.dependencies",
+  "version": "1.0.0",
+  "displayName": "Dependency Manager",
+  "description": "Dependency Manager, Mark components and locate in execution",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "author": {
+    "name": "Nicolás Felipe Dipierro",
+    "email": "nicolasdipierrocontacto@gmail.com",
+    "url": "https://felidipi.github.io/portfolio/"
+  }
+}

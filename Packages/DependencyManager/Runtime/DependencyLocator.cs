@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
-namespace OneFrame
+namespace OneFrame.Dependencies.Runtime
 {
     [DefaultExecutionOrder(-1000)]
     public class DependencyLocator : MonoBehaviour
     {
         private static DependencyLocator _instance;
-        public static DependencyLocator Instance 
-        { 
+        public static DependencyLocator Instance
+        {
             get
             {
-                if(_instance == null)
+                if (_instance == null)
                 {
                     _instance = new GameObject(nameof(DependencyLocator)).AddComponent<DependencyLocator>();
                     _instance.hideFlags = HideFlags.NotEditable;
@@ -56,16 +55,6 @@ namespace OneFrame
             Debug.Log($"<color=#3498db><b>← [Request]:</b> {key.Name}</color>");
 
             return _services[key];
-        }
-    }
-
-
-    [DefaultExecutionOrder(-999)]
-    public class DependencyService : MonoBehaviour
-    {
-        protected void Awake()
-        {
-            DependencyLocator.Instance.Register(this);
         }
     }
 }

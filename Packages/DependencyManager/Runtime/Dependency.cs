@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace OneFrame
+namespace OneFrame.Dependencies.Runtime
 {
     [Serializable]
     public class Dependency<T> where T : Component
